@@ -1,0 +1,51 @@
+@mixin flexHorizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexVertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@mixin spacingContent {
+  margin-top: 2rem;
+}
+@mixin mainButton {
+  @include spacingContent;
+  border: 0;
+  color: #fff;
+  background: $second-color;
+  cursor: pointer;
+  &:hover{
+    background-color: #fff;
+    color: $second-color;
+    transition: 0.3s;
+  }
+}
+@mixin mainInput {
+  @include spacingContent;
+  width: 80%;
+  height: 2rem;
+  background-color:#74a0e8;
+  border: 0;
+  font-size: 2rem;
+  padding: 1rem;
+  color: #fff;
+  &::placeholder{
+    color: #fff;
+    opacity: 0.6;
+  }
+}
+@mixin afterOpacity {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: $second-color;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather application</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+ <!-- MAIN WRAPPER -->
+<main class="wrapper">
+  <video autoplay muted loop id="myVideo">
+  <source src="video/bg-video.mp4" type="video/mp4">
+</video>
+<!-- USER INPUT SECTION -->
+  <section class="current-weather">
+    <h1>Enter location to get weather information</h1>
+    <input class="city-input" type="text" name="city" placeholder="Your city..." required="true" autocomplete="off" autofocus>
+    <button class="btn-submit" type="submit" >Show Infomations</button>
+    <p class="error hidden">Something went wrong, please enter city name again</p>
+    <section class="city-informations hidden">
+      <h2 class="choosen-city"></h2>
+      <p class="weather-info"></p>
+      <p class="weather-info"></p>
+      <p class="weather-info"></p>
+      <p class="weather-info"></p>
+    </section>
+  </section>
+  <!-- FUTURE WEATHER SECTION -->
+  <section class="future-weather">
+    <h1 class="check-future"></h1>
+    <button class="yes-button choice-btn" type="button" name="button">Yes, sure</button>
+    <button class="no-button choice-btn" type="button" name="button">No, I want to check diffrent city</button>
+    <input class="city-input hidden" type="text" name="city" placeholder="Your city..." required autocomplete="on">
+    <button class="btn-submit hidden choice-btn" >Show Infomations</button>
+    <section class="future-city-informations">
+      <h2 class="choosen-city"></h2>
+      <div class="all-days">
+        <div class="days">
+          <p class="time"></p>
+          <p class="future-temp"></p>
+          <p class="future-humid"></p>
+          <p class="future-pressure"></p>
+          <p class="future-clouds"></p>
+        </div>
+        <div class="days">
+          <p class="time"></p>
+          <p class="future-temp"></p>
+          <p class="future-humid"></p>
+          <p class="future-pressure"></p>
+          <p class="future-clouds"></p>
+        </div>
+        <div class="days">
+          <p class="time"></p>
+          <p class="future-temp"></p>
+          <p class="future-humid"></p>
+          <p class="future-pressure"></p>
+          <p class="future-clouds"></p>
+        </div>
+        <div class="days">
+          <p class="time"></p>
+          <p class="future-temp"></p>
+          <p class="future-humid"></p>
+          <p class="future-pressure"></p>
+          <p class="future-clouds"></p>
+        </div>
+        <div class="days"></p>
+          <p class="time"></p>
+          <p class="future-temp"></p>
+          <p class="future-humid"></p>
+          <p class="future-pressure"></p>
+          <p class="future-clouds"></p>
+        </div>
+      </div>
+
+    </section>
+
+  </section>
+
+</main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

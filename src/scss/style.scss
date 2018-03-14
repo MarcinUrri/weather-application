@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
+@import "mixins";
+@import "variables";
+@import "reset";
+
+body{
+  background-color: $main-color;
+  font-size: 16px;
+  color: #fff;
+}
+.wrapper{
+  @include flexVertical;
+  font-family: 'Julius Sans One', sans-serif;
+  // Current weather display
+  .current-weather{
+    @include flexVertical;
+    @include spacingContent;
+    font-size: 2rem;
+    text-align: center;
+    z-index: 2;
+    width: 80%;
+    h1{
+      text-transform: uppercase;
+      font-size: 2.5rem;
+    }
+    .city-input{
+    @include mainInput;
+    }
+    .btn-submit{
+      width: 50%;
+      height: 4rem;
+      font-size: 2.5rem;
+      @include mainButton;
+    }
+    .error{
+      background-color: red;
+      color: #fff;
+    }
+    // Main weather info
+  .city-informations{
+    @include spacingContent;
+    text-align: left;
+    width: 60%;
+    z-index: 1;
+    border: 1px solid black;
+    position: relative;
+    &::after{
+      @include afterOpacity;
+    }
+    h2{
+      font-size: 2.5rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    p{
+      padding:1rem 0 1rem 1rem;
+    }
+  }
+}
+// Forecast display
+  .future-weather{
+    @include spacingContent;
+    display: none;
+    flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    font-size: 3rem;
+    text-align: center;
+    z-index: 2;
+    width: 90%;
+    .choice-btn{
+      @include mainButton;
+      padding: 0;
+      width: 50%;
+      font-size: 2.5rem;
+      height: 4rem;
+    }
+    .btn-submit{
+      width: 50%;
+      align-self: center;
+      height: 4rem;
+      margin-bottom: 5rem;
+    }
+    .city-input{
+      @include mainInput;
+    }
+    .future-city-informations{
+      @include flexVertical;
+      display: none;
+      .choosen-city{
+        position: relative;
+      }
+      // Main Forecast informations
+      .all-days{
+        @include spacingContent;
+        @include flexHorizontal;
+        font-size: 2rem;
+        text-align: left;
+        .days{
+          border: 1px solid black;
+          padding: 1rem;
+          margin: 0.5rem;
+          height: 20rem;
+          width: 15rem;
+          position: relative;
+          &:hover{
+            background-color: #fff;
+            color: $second-color;
+            transition: 0.3s;
+          }
+          &::after{
+            @include afterOpacity;
+          }
+          }
+          p{
+            margin-top: 1rem;
+            font-size: 1.2rem;
+          }
+          .time{
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+}
+
+.hidden{
+  display: none;
+}
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+// MEDIA QUERIES
+// TABLET RESPONISVE
+@media screen and (max-width: 1220px) {
+  .wrapper{
+    // Current weather display
+    .current-weather{
+      h1{
+        font-size: 1.5rem;
+      }
+      .city-input{
+      height: 1rem;
+      font-size: 1.5rem;
+      }
+      .btn-submit{
+        width: 80%;
+        font-size: 1.5rem;
+      }
+      // Main weather info
+    .city-informations{
+      width: 100%;
+      h2{
+        font-size: 1.5rem;
+      }
+      p{
+        padding:0.5rem 0 0.5rem 0.5rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  // Forecast display
+    .future-weather{
+      font-size: 1.5rem;
+      width: 100%;
+      .choice-btn{
+        width: 70%;
+        font-size: 1.5rem;
+      }
+      .future-city-informations{
+        .choosen-city{
+        }
+        // Main Forecast informations
+        .all-days{
+          @include flexVertical;
+          width: 70%;
+          .days{
+            height: 15rem;
+            width: 100%;
+            text-align: center;
+            }
+            p{
+              margin-top: 0.5rem;
+              font-size: 1.5rem;
+            }
+            .time{
+              font-size: 2rem;
+              margin-bottom: 1rem;
+            }
+          }
+        }
+      }
+  }
+}
+
+// MOBILE RESPONISVE
+@media screen and (max-width: 420px) {
+  .wrapper{
+    // Current weather display
+    .current-weather{
+      h1{
+        font-size: 1.5rem;
+      }
+      .city-input{
+      height: 1rem;
+      font-size: 1.5rem;
+      }
+      .btn-submit{
+        width: 80%;
+        height: 4rem;
+        font-size: 1.5rem;
+      }
+      // Main weather info
+    .city-informations{
+      width: 100%;
+      h2{
+        font-size: 1.5rem;
+      }
+      p{
+        padding:0.5rem 0 0.5rem 0.5rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  // Forecast display
+    .future-weather{
+      font-size: 1.5rem;
+      width: 100%;
+      .choice-btn{
+        width: 70%;
+        font-size: 1.5rem;
+      }
+      .future-city-informations{
+        .choosen-city{
+        }
+        // Main Forecast informations
+        .all-days{
+          @include flexVertical;
+          width: 90%;
+          .days{
+            height: 12rem;
+            width: 100%;
+            }
+            p{
+              margin-top: 0.5rem;
+              font-size: 1.2rem;
+            }
+            .time{
+              font-size: 1.5rem;
+              margin-bottom: 0.5rem;
+            }
+          }
+        }
+      }
+  }
+}
