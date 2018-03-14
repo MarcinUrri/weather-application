@@ -27,7 +27,7 @@ let showWeather = () => {
   // create XHR Object
   cityInformations.classList.remove('hidden');
   let userInput = cityInput[0].value;
-  let url = `http://api.openweathermap.org/data/2.5/find?q=${userInput}&units=metric&APPID=3f97ec7c1a1fbcea52329fce776a3af1`
+  let url = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/find?q=${userInput}&units=metric&APPID=3f97ec7c1a1fbcea52329fce776a3af1`
   let xhr = new XMLHttpRequest();
   // OPEN - type, url/file, async
   xhr.open('GET', url, true);
@@ -81,7 +81,7 @@ let weatherForecast = (name) =>{
   btnSubmitFuture.style.display = "none";
   cityInput[1].style.display = "none";
 
-  let url = `http://api.openweathermap.org/data/2.5/forecast?q=${name}&units=metric&APPID=3f97ec7c1a1fbcea52329fce776a3af1`
+  let url = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${name}&units=metric&APPID=3f97ec7c1a1fbcea52329fce776a3af1`
   let xhr = new XMLHttpRequest();
   // OPEN - type, url/file, async
   xhr.open('GET', url, true);
